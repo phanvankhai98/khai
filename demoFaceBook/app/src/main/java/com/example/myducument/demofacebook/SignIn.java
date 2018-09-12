@@ -25,8 +25,12 @@ public class SignIn extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent=new Intent();
+                intent.putExtra("user",mEditUser.getText().toString());
+                intent.putExtra("pass",mEditPass.getText().toString());
+                setResult(MainActivity.RESULT_OK,intent);
                 Toast.makeText(SignIn.this, "Tao tai khoan thanh cong!!", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }
